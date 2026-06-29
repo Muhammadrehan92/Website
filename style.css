@@ -128,12 +128,6 @@ nav ul li a:hover{
     color: #ff4d6d;
 }
 
-/* Active link style */
-nav ul li a.active{
-    color: #ff4d6d;
-}
-
-/* Underline animation */
 nav ul li a::after{
     content: "";
     position: absolute;
@@ -297,6 +291,9 @@ nav ul li a:hover::after{
 .review h4{
     color:var(--gold);
     font-size:20px;
+}
+.reviews h2{
+    text-align: center;
 }
 
 .newsletter{
@@ -463,7 +460,7 @@ html::-webkit-scrollbar-track{
     gap:30px;
 }
 
-.card{
+ .card{
     background:#fff;
     border-radius:15px;
     overflow:hidden;
@@ -472,16 +469,16 @@ html::-webkit-scrollbar-track{
     cursor:pointer;
 }
 
-.card:hover{
+ .card:hover{
     transform:translateY(-10px);
 }
 
-.card img{
+ .card img{
     height:320px;
     object-fit:cover;
 }
 
-.card h3{
+ .card h3{
     text-align:center;
     padding:20px;
     font-size:25px;
@@ -506,7 +503,7 @@ html::-webkit-scrollbar-track{
     gap:30px;
 }
 
-.product-card{
+ .product-card{
     background:#fff;
     border-radius:15px;
     overflow:hidden;
@@ -519,23 +516,23 @@ html::-webkit-scrollbar-track{
     transform:translateY(-10px);
 }
 
-.product-card img{
+ .product-card img{
     height:260px;
     object-fit:cover;
 }
 
-.product-card h3{
+ .product-card h3{
     margin:20px 0 10px;
 }
 
-.product-card p{
+ .product-card p{
     color:var(--gold);
     font-size:22px;
     margin-bottom:20px;
     font-weight:600;
 }
 
-.product-card button{
+ .product-card button{
     margin-bottom:25px;
     padding:14px 35px;
     background:var(--gold);
@@ -546,16 +543,6 @@ html::-webkit-scrollbar-track{
 .product-card button:hover{
     background:var(--black);
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -584,28 +571,18 @@ html::-webkit-scrollbar-track{
     transition:.4s;
 }
 
-.box:hover{
+ .box:hover{
     background:var(--gold);
     color:#fff;
 }
 
-.box i{
+ .box i{
     font-size:45px;
     margin-bottom:20px;
 }
 
-.box h3{
+ .box h3{
     font-size:22px;
 }
-nav ul li a.active{
-    color: var(--gold);
-}
 
-nav ul li a.active::after{
-    width: 100%;
-}
-
-.topBtn:hover{
-    background:#111 !important;
-}
 

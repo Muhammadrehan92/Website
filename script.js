@@ -2,7 +2,7 @@
 // Sticky Header Shadow
 //============================
 
-const header = document.querySelector("header");
+/*const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
 
@@ -199,4 +199,202 @@ navLinks.forEach(link => {
         // add active to clicked one
         this.classList.add("active");
     });
+});*/
+// ================================
+// Lourelle Home Page JavaScript
+// ================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    stickyHeader();
+    activeNavbar();
+    heroButton();
+    scrollTopButton();
+    revealAnimation();
+    newsletterValidation();
+
 });
+
+// ================================
+// Sticky Header
+// ================================
+
+function stickyHeader() {
+
+    const header = document.querySelector("header");
+
+    if (!header) return;
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 50) {
+
+            header.classList.add("sticky");
+
+        } else {
+
+            header.classList.remove("sticky");
+
+        }
+
+    });
+
+}
+
+// ================================
+// Active Navbar
+// ================================
+
+function activeNavbar() {
+
+    const currentPage = window.location.pathname.split("/").pop();
+
+    const links = document.querySelectorAll("nav ul li a");
+
+    links.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === currentPage) {
+
+            link.classList.add("active");
+
+        }
+
+    });
+
+}
+
+// ================================
+// Hero Button
+// ================================
+
+function heroButton() {
+
+    const button = document.querySelector(".hero button");
+
+    const category = document.querySelector(".categories");
+
+    if (!button || !category) return;
+
+    button.addEventListener("click", () => {
+
+        category.scrollIntoView({
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
+
+// ================================
+// Scroll To Top
+// ================================
+
+function scrollTopButton() {
+
+    const topBtn = document.createElement("button");
+
+    topBtn.innerHTML = "↑";
+
+    topBtn.className = "topBtn";
+
+    document.body.appendChild(topBtn);
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 300) {
+
+            topBtn.classList.add("show");
+
+        } else {
+
+            topBtn.classList.remove("show");
+
+        }
+
+    });
+
+    topBtn.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
+
+// ================================
+// Reveal Animation
+// ================================
+
+function revealAnimation() {
+
+    const items = document.querySelectorAll(
+
+        ".card,.product-card,.box,.review"
+
+    );
+
+    function reveal() {
+
+        const windowHeight = window.innerHeight;
+
+        items.forEach(item => {
+
+            const top = item.getBoundingClientRect().top;
+
+            if (top < windowHeight - 100) {
+
+                item.classList.add("show");
+
+            }
+
+        });
+
+    }
+
+    window.addEventListener("scroll", reveal);
+
+    reveal();
+
+}
+
+// ================================
+// Newsletter
+// ================================
+
+function newsletterValidation() {
+
+    const form = document.querySelector(".newsletter form");
+
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const email = this.querySelector("input");
+
+        if (email.value.trim() === "") {
+
+            alert("Please enter your email.");
+
+            return;
+
+        }
+
+        alert("Thank you for subscribing!");
+
+        form.reset();
+
+    });
+
+}
