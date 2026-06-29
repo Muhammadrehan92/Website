@@ -1,0 +1,741 @@
+/* RESET */
+/* ===================================
+   GOOGLE FONT
+=================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* ===================================
+   RESET
+=================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+}
+
+body{
+background:#f8f9fb;
+}
+
+
+
+
+/* ===================================
+   SHOP BANNER
+=================================== */
+
+.shop-banner{
+
+    width:100%;
+    height:320px;
+
+    background:linear-gradient(rgba(0,0,0,.45),
+    rgba(0,0,0,.45)),
+    url("images/banner.jpg") center/cover;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.shop-banner h1{
+
+    color:#fff;
+    font-size:55px;
+    margin-bottom:15px;
+
+}
+
+.shop-banner p{
+
+    color:#f1f1f1;
+    font-size:18px;
+    letter-spacing:1px;
+
+}
+/* ===================================
+   SHOP CONTAINER
+=================================== */
+
+.shop-container{
+    width:90%;
+    margin:60px auto;
+    display:grid;
+    grid-template-columns:260px 1fr;
+    gap:35px;
+    align-items:start;
+}
+
+
+/* ===================================
+   SIDEBAR
+=================================== */
+
+.sidebar{
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    position:sticky;
+    top:100px;
+}
+
+.sidebar h3{
+    font-size:22px;
+    margin-bottom:20px;
+    color:#222;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li{
+    padding:14px 15px;
+    margin-bottom:10px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+    font-size:15px;
+    font-weight:500;
+}
+
+.sidebar ul li:hover{
+    background:#c89b3c;
+    color:#fff;
+    transform:translateX(5px);
+}
+
+
+/* ===================================
+   OFFER BOX
+=================================== */
+
+.offer-box{
+    margin-top:35px;
+    background:linear-gradient(135deg,#111,#333);
+    color:#fff;
+    text-align:center;
+    padding:25px 20px;
+    border-radius:15px;
+}
+
+.offer-box h4{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.offer-box p{
+    margin-bottom:18px;
+    font-size:15px;
+    color:#ddd;
+}
+
+.offer-box button{
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:#c89b3c;
+    color:#fff;
+    font-size:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.offer-box button:hover{
+    background:#fff;
+    color:#111;
+}
+
+
+/* ===================================
+   PRODUCTS AREA
+=================================== */
+
+.products-area{
+    width:100%;
+}
+
+
+/* ===================================
+   TOP BAR
+=================================== */
+
+.top-bar{
+    background:#fff;
+    padding:18px 20px;
+    border-radius:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+    margin-bottom:35px;
+    flex-wrap:wrap;
+}
+
+
+/* ===================================
+   SEARCH BOX
+=================================== */
+
+.search-box{
+    flex:1;
+    min-width:260px;
+    position:relative;
+}
+
+.search-box input{
+    width:100%;
+    padding:14px 50px 14px 18px;
+    border:1px solid #ddd;
+    border-radius:30px;
+    outline:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+.search-box input:focus{
+    border-color:#c89b3c;
+}
+
+.search-box i{
+    position:absolute;
+    right:20px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#888;
+}
+
+
+/* ===================================
+   SELECT BOXES
+=================================== */
+
+.top-bar select{
+    padding:13px 18px;
+    border-radius:30px;
+    border:1px solid #ddd;
+    outline:none;
+    cursor:pointer;
+    font-size:15px;
+    transition:.3s;
+    background:#fff;
+}
+
+.top-bar select:hover{
+    border-color:#c89b3c;
+}
+/* ===================================
+   PRODUCT GRID
+=================================== */
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:30px;
+}
+
+
+/* ===================================
+   PRODUCT CARD
+=================================== */
+
+.product-card{
+
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.35s;
+    position:relative;
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-10px);
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+
+}
+
+
+/* ===================================
+   PRODUCT IMAGE
+=================================== */
+
+.product-card img{
+
+    width:100%;
+    aspect-ratio:3/4;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
+
+}
+
+.product-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+
+/* ===================================
+   WISHLIST ICON
+=================================== */
+
+.product-icons{
+
+    position:absolute;
+    top:15px;
+    right:15px;
+    z-index:10;
+
+}
+
+.product-icons i{
+
+    width:42px;
+    height:42px;
+
+    background:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    cursor:pointer;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+}
+
+.product-icons i:hover{
+
+    background:#c89b3c;
+    color:#fff;
+
+}
+
+
+/* ===================================
+   PRODUCT DETAILS
+=================================== */
+
+.product-card h3{
+
+    margin:18px 20px 8px;
+    font-size:20px;
+    color:#222;
+
+}
+
+.product-card p{
+
+    margin:0 20px;
+    font-size:22px;
+    font-weight:700;
+    color:#c89b3c;
+
+}
+
+
+/* ===================================
+   STAR RATING
+=================================== */
+
+.rating{
+
+    margin:12px 20px;
+    color:#f5b301;
+    font-size:14px;
+
+}
+
+
+/* ===================================
+   BUTTON
+=================================== */
+
+.product-card button{
+
+    margin:20px;
+    width:calc(100% - 40px);
+
+    padding:14px;
+
+    border:none;
+    border-radius:30px;
+
+    background:#111;
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:15px;
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.product-card button:hover{
+
+    background:#c89b3c;
+
+}
+
+
+/* ===================================
+   SALE BADGE
+=================================== */
+
+.sale{
+
+    position:absolute;
+
+    top:15px;
+    left:15px;
+
+    background:#e53935;
+
+    color:#fff;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+    font-weight:600;
+
+    z-index:10;
+
+}
+
+
+/* ===================================
+   PRODUCT CONTENT
+=================================== */
+
+.product-content{
+
+    padding-bottom:15px;
+
+}
+/* ==========================
+   FEATURES SECTION
+========================== */
+
+.features{
+    width: 90%;
+    margin: 80px auto;
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 15px;
+    
+}
+
+.features h2{
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #222;
+}
+ .card{background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.35s;
+    position:relative;
+   }
+   .card:hover{
+
+    transform:translateY(-10px);
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+}
+
+
+
+  
+
+/*.feature-box{
+    background: #ffffff;
+    padding: 35px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    transition: .4s;
+}
+
+.feature-box:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+}
+
+.feature-box i{
+    font-size: 40px;
+    color: #111;
+  
+    
+
+}
+
+.feature-box h3{
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.feature-box p{
+    color: #666;
+    line-height: 1.6;
+    
+    }*/
+
+/* ==========================
+   NEWSLETTER
+========================== */
+
+/*.newsletter{
+    width: 100%;
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+    margin-top: 80px;
+}
+
+.newsletter h2{
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.newsletter p{
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.news-form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.news-form input{
+    width: 350px;
+    max-width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+}
+
+.news-form button{
+    padding: 15px 35px;
+    border: none;
+    background: #fff;
+    color: #111;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: bold;
+}
+
+.news-form button:hover{
+    background: gold;
+}
+
+ ==========================
+   FOOTER
+========================== 
+
+footer{
+    background: #000;
+    color: white;
+    padding: 60px 10%;
+}
+
+.footer-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 40px;
+}
+
+.footer-box h3{
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.footer-box p{
+    color: #bbb;
+    line-height: 1.8;
+}
+
+.footer-box ul{
+    list-style: none;
+}
+
+.footer-box ul li{
+    margin: 12px 0;
+}
+
+.footer-box ul li a{
+    color: #bbb;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.footer-box ul li a:hover{
+    color: gold;
+    padding-left: 6px;
+}
+
+.social-links{
+    margin-top: 20px;
+}
+
+.social-links a{
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    background: #222;
+    color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+    transition: .3s;
+}
+
+.social-links a:hover{
+    background: gold;
+    color: #111;
+}
+
+.footer-bottom{
+    border-top: 1px solid #333;
+    margin-top: 50px;
+    padding-top: 25px;
+    text-align: center;
+    color: #999;
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+/*::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background: #eee;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #555;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #111;
+}
+
+/* ==========================
+   RESPONSIVE DESIGN
+========================== */
+
+@media(max-width:992px){
+
+    .shop-container{
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar{
+        position: static;
+        width: 100%;
+    }
+
+    .hero-content h1{
+        font-size: 42px;
+    }
+
+    .hero-content p{
+        font-size: 18px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    nav{
+        padding: 15px 6%;
+    }
+
+    .nav-links{
+        display: none;
+    }
+
+    .hero{
+        height: 60vh;
+    }
+
+    .hero-content h1{
+        font-size: 34px;
+    }
+
+    .products-grid{
+        grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    }
+
+    .newsletter h2{
+        font-size: 28px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero-content h1{
+        font-size: 28px;
+    }
+
+    .hero-content p{
+        font-size: 16px;
+    }
+
+    .products-grid{
+        grid-template-columns: 1fr;
+    }
+    
+    .product-card img{
+        height: 260px;
+    }
+    
+    .news-form input{
+        width: 100%;
+    }
+    
+}
+header.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
+    z-index: 999;
+    transition: .3s;
+}
+    

@@ -1,0 +1,164 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins', sans-serif;
+}
+
+body{
+background:#f8f9fb;
+}
+
+/* HEADER
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 8%;
+background:#fff;
+box-shadow:0 3px 15px rgba(0,0,0,.1);
+position:sticky;
+top:0;
+z-index:1000;
+}
+.logo h2{
+    font-size:30px;
+    color:#111;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.logo span{
+    display:block;
+    font-size:13px;
+    color:#888;
+    letter-spacing:1px;
+}
+
+nav nav ul{
+
+    display:flex;
+
+    gap:35px;
+
+}
+
+nav{
+display:flex;
+gap:25px;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+}
+
+nav a:hover,
+nav a.active{
+
+    color:#c0275c;
+}
+
+nav a::after{
+
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:#c89b3c;
+    transition:.3s;
+
+}
+
+nav a:hover::after,
+nav a.active::after{
+
+    width:100%;
+
+} */
+
+
+
+
+/* HERO */
+.collection-hero{
+height:300px;
+background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+url("images/banner.jpg") center/cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:#fff;
+text-align:center;
+}
+
+.collection-hero h1{
+font-size:50px;
+}
+
+.collection-hero p{
+font-size:18px;
+margin-top:10px;
+}
+
+/* GRID */
+.collection-container{
+width:90%;
+margin:50px auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+/* CARD */
+.collection-card{
+position:relative;
+overflow:hidden;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+cursor:pointer;
+}
+
+.collection-card img{
+width:100%;
+height:350px;
+object-fit:cover;
+transition:.4s;
+}
+
+.collection-card:hover img{
+transform:scale(1.1);
+}
+
+/* OVERLAY */
+.overlay{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+background:linear-gradient(to top, rgba(0,0,0,.7), transparent);
+color:#fff;
+padding:20px;
+text-align:center;
+}
+
+.overlay h2{
+margin-bottom:10px;
+}
+
+.overlay button{
+padding:10px 25px;
+border:none;
+border-radius:25px;
+background:#c89b3c;
+color:#fff;
+cursor:pointer;
+}
+
+.overlay button:hover{
+background:#fff;
+color:#111;
+}
