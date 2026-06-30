@@ -13,15 +13,20 @@ body{
 .contact-header{
     text-align:center;
     padding:80px 20px 50px;
+    background: url(contact.jpg);
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 }
 
 .contact-header h1{
     font-size:48px;
     margin-bottom:15px;
+    color: gold;
 }
 
 .contact-header p{
-    color:#666;
+    color:#c3ff00;
     max-width:650px;
     margin:auto;
     line-height:1.7;
