@@ -1,36 +1,97 @@
-//============================
-// Sticky Header Shadow
-//============================
+// ================================
+// L O U R E L L E   S C R I P T
+// ================================
 
-/*const header = document.querySelector("header");
+
+// Sticky Header
+const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
-
     if (window.scrollY > 50) {
-
-        header.style.boxShadow = "0 8px 25px rgba(0,0,0,.15)";
-        header.style.background = "#fff";
-
+        header.classList.add("sticky");
     } else {
+        header.classList.remove("sticky");
+    }
+});
 
-        header.style.boxShadow = "none";
-        header.style.background = "#fff";
+
+// Hero Animation
+window.addEventListener("load", () => {
+
+    const hero = document.querySelector(".hero-content");
+
+    if (hero) {
+
+        hero.style.opacity = "0";
+        hero.style.transform = "translateY(40px)";
+
+        setTimeout(() => {
+
+            hero.style.transition = "1s ease";
+            hero.style.opacity = "1";
+            hero.style.transform = "translateY(0)";
+
+        }, 300);
+
     }
 
 });
 
 
-//============================
-// Active Navbar Link
-//============================
+// Scroll Reveal Animation
+const revealElements = document.querySelectorAll(
+".card, .product-card, .box, .review"
+);
 
-const links = document.querySelectorAll("nav ul li a");
+function revealElementsOnScroll() {
 
-links.forEach(link => {
+    revealElements.forEach(element => {
+
+        const top = element.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if (top < screenHeight - 100) {
+            element.classList.add("show");
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", revealElementsOnScroll);
+window.addEventListener("load", revealElementsOnScroll);
+
+
+// Product Button Animation
+
+const buttons = document.querySelectorAll(".product-card button");
+
+buttons.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        btn.innerHTML = "✓ Added";
+
+        setTimeout(() => {
+
+            btn.innerHTML = "Add To Cart";
+
+        }, 1500);
+
+    });
+
+});
+
+
+// Navbar Active Link
+
+const navLinks = document.querySelectorAll("nav ul li a");
+
+navLinks.forEach(link => {
 
     link.addEventListener("click", function () {
 
-        links.forEach(item => item.classList.remove("active"));
+        navLinks.forEach(item => item.classList.remove("active"));
 
         this.classList.add("active");
 
@@ -39,103 +100,45 @@ links.forEach(link => {
 });
 
 
-//============================
-// Scroll To Top Button
-//============================
+// Button Click Effect
 
-const topBtn = document.createElement("button");
+document.querySelectorAll("button").forEach(button => {
 
-topBtn.innerHTML = "↑";
+    button.addEventListener("click", () => {
 
-topBtn.className = "topBtn";
+        button.style.transform = "scale(.95)";
 
-document.body.appendChild(topBtn);
+        setTimeout(() => {
 
-topBtn.style.cssText = `
-position:fixed;
-bottom:30px;
-right:30px;
-width:50px;
-height:50px;
-border:none;
-border-radius:50%;
-background:#C9A227;
-color:#fff;
-font-size:22px;
-cursor:pointer;
-display:none;
-z-index:1000;
-`;
+            button.style.transform = "scale(1)";
 
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 300) {
-
-        topBtn.style.display = "block";
-
-    } else {
-
-        topBtn.style.display = "none";
-
-    }
-
-});
-
-topBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top:0,
-        behavior:"smooth"
+        },150);
 
     });
 
 });
 
 
-//============================
-// Reveal Animation
-//============================
+// Icon Hover Animation
 
-const revealElements = document.querySelectorAll(
-".card,.product-card,.box,.review"
-);
+document.querySelectorAll(".icons i").forEach(icon => {
 
-function reveal(){
+    icon.addEventListener("mouseenter", () => {
 
-    const windowHeight = window.innerHeight;
-
-    revealElements.forEach(item=>{
-
-        const top = item.getBoundingClientRect().top;
-
-        if(top < windowHeight - 100){
-
-            item.style.opacity = "1";
-            item.style.transform = "translateY(0)";
-
-        }
+        icon.style.transform = "translateY(-5px)";
 
     });
 
-}
+    icon.addEventListener("mouseleave", () => {
 
-revealElements.forEach(item=>{
+        icon.style.transform = "translateY(0)";
 
-    item.style.opacity="0";
-    item.style.transform="translateY(60px)";
-    item.style.transition=".7s";
+    });
 
 });
 
-window.addEventListener("scroll",reveal);
 
-reveal();
-
-
-//============================
-// Newsletter Validation
-//============================
+// Newsletter
 
 const form = document.querySelector(".newsletter form");
 
@@ -145,256 +148,178 @@ form.addEventListener("submit",function(e){
 
 e.preventDefault();
 
-const email = this.querySelector("input");
+const email=this.querySelector("input").value;
 
-if(email.value===""){
+if(email===""){
 
 alert("Please enter your email.");
 
-return;
-
-}
+}else{
 
 alert("Thank you for subscribing!");
 
-email.value="";
+this.reset();
+
+}
 
 });
 
 }
 
 
-//============================
-// Hero Button Scroll
-//============================
+// Smooth Scroll
 
-const heroBtn = document.querySelector(".hero button");
+document.documentElement.style.scrollBehavior="smooth";
 
-const category = document.querySelector(".categories");
+console.log("Lourelle Script Loaded Successfully");
+// ===============================
+// Search Icon
+// ===============================
 
-if(heroBtn){
+const searchIcon = document.getElementById("searchIcon");
 
-heroBtn.addEventListener("click",()=>{
+if (searchIcon) {
+    searchIcon.addEventListener("click", () => {
 
-category.scrollIntoView({
+        const search = prompt("Search your product:");
 
-behavior:"smooth"
-
-});
-
-});
-}
-// =========================
-// ACTIVE LINK AUTO HIGHLIGHT
-// =========================
-
-const navLinks = document.querySelectorAll("nav ul li a");
-
-navLinks.forEach(link => {
-    link.addEventListener("click", function () {
-
-        // remove active from all
-        navLinks.forEach(l => l.classList.remove("active"));
-
-        // add active to clicked one
-        this.classList.add("active");
-    });
-});*/
-// ================================
-// Lourelle Home Page JavaScript
-// ================================
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    stickyHeader();
-    activeNavbar();
-    heroButton();
-    scrollTopButton();
-    revealAnimation();
-    newsletterValidation();
-
-});
-
-// ================================
-// Sticky Header
-// ================================
-
-function stickyHeader() {
-
-    const header = document.querySelector("header");
-
-    if (!header) return;
-
-    window.addEventListener("scroll", () => {
-
-        if (window.scrollY > 50) {
-
-            header.classList.add("sticky");
-
-        } else {
-
-            header.classList.remove("sticky");
-
+        if (search && search.trim() !== "") {
+            alert("Searching for: " + search);
         }
 
     });
-
 }
 
-// ================================
-// Active Navbar
-// ================================
+// ===============================
+// Cart Counter
+// ===============================
 
-function activeNavbar() {
+let cart = 0;
 
-    const currentPage = window.location.pathname.split("/").pop();
+const cartCount = document.getElementById("cartCount");
 
-    const links = document.querySelectorAll("nav ul li a");
-
-    links.forEach(link => {
-
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === currentPage) {
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-}
-
-// ================================
-// Hero Button
-// ================================
-
-function heroButton() {
-
-    const button = document.querySelector(".hero button");
-
-    const category = document.querySelector(".categories");
-
-    if (!button || !category) return;
+document.querySelectorAll(".product-card button").forEach(button => {
 
     button.addEventListener("click", () => {
 
-        category.scrollIntoView({
+        cart++;
 
-            behavior: "smooth"
+        cartCount.innerText = cart;
 
-        });
+    });
+
+});
+
+// ===============================
+// Cart Icon
+// ===============================
+
+const cartIcon = document.getElementById("cartIcon");
+
+if (cartIcon) {
+
+    cartIcon.addEventListener("click", () => {
+
+        if (cart === 0) {
+            alert("Your cart is empty.");
+        } else {
+            alert("You have " + cart + " item(s) in your cart.");
+        }
 
     });
 
 }
+// ===============================
+// Footer Animation
+// ===============================
 
-// ================================
-// Scroll To Top
-// ================================
+const footer = document.querySelector("footer");
 
-function scrollTopButton() {
-
-    const topBtn = document.createElement("button");
-
-    topBtn.innerHTML = "↑";
-
-    topBtn.className = "topBtn";
-
-    document.body.appendChild(topBtn);
+if (footer) {
 
     window.addEventListener("scroll", () => {
 
-        if (window.scrollY > 300) {
+        const footerTop = footer.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
 
-            topBtn.classList.add("show");
-
-        } else {
-
-            topBtn.classList.remove("show");
-
+        if (footerTop < screenHeight - 100) {
+            footer.style.opacity = "1";
+            footer.style.transform = "translateY(0)";
         }
 
     });
 
-    topBtn.addEventListener("click", () => {
+}
 
-        window.scrollTo({
+// ===============================
+// Social Icons
+// ===============================
 
-            top: 0,
+const socialIcons = document.querySelectorAll(".social i");
 
-            behavior: "smooth"
+socialIcons.forEach(icon => {
 
-        });
+    icon.addEventListener("mouseenter", () => {
+
+        icon.style.transform = "translateY(-8px) scale(1.1)";
 
     });
 
-}
+    icon.addEventListener("mouseleave", () => {
 
-// ================================
-// Reveal Animation
-// ================================
+        icon.style.transform = "translateY(0) scale(1)";
 
-function revealAnimation() {
+    });
 
-    const items = document.querySelectorAll(
+});
 
-        ".card,.product-card,.box,.review"
+// ===============================
+// Social Click
+// ===============================
 
-    );
+socialIcons.forEach(icon => {
 
-    function reveal() {
+    icon.addEventListener("click", () => {
 
-        const windowHeight = window.innerHeight;
-
-        items.forEach(item => {
-
-            const top = item.getBoundingClientRect().top;
-
-            if (top < windowHeight - 100) {
-
-                item.classList.add("show");
-
-            }
-
-        });
-
-    }
-
-    window.addEventListener("scroll", reveal);
-
-    reveal();
-
-}
-
-// ================================
-// Newsletter
-// ================================
-
-function newsletterValidation() {
-
-    const form = document.querySelector(".newsletter form");
-
-    if (!form) return;
-
-    form.addEventListener("submit", function (e) {
-
-        e.preventDefault();
-
-        const email = this.querySelector("input");
-
-        if (email.value.trim() === "") {
-
-            alert("Please enter your email.");
-
-            return;
-
+        if (icon.classList.contains("fa-facebook-f")) {
+            alert("Facebook Page Coming Soon");
         }
 
-        alert("Thank you for subscribing!");
+        else if (icon.classList.contains("fa-instagram")) {
+            alert("Instagram Page Coming Soon");
+        }
 
-        form.reset();
+        else if (icon.classList.contains("fa-twitter")) {
+            alert("Twitter Page Coming Soon");
+        }
+
+        else if (icon.classList.contains("fa-youtube")) {
+            alert("YouTube Channel Coming Soon");
+        }
 
     });
 
-}
+});
+const facebook = document.getElementById("facebook");
+
+facebook.addEventListener("click", () => {
+    location.href = "https://facebook.com";
+});
+
+
+const instagram = document.getElementById("instagram")
+
+instagram.addEventListener("click", () => {
+    location.href = "https://instagram.com";
+});
+
+const twitter = document.getElementById("twitter")
+
+document.getElementById("twitter").addEventListener("click", () => {
+   location.href = "https://x.com";
+});
+
+const youtube = document.getElementById("youtube")
+document.getElementById("youtube").addEventListener("click", () => {
+    location.href = "https://youtube.com";
+});    

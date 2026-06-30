@@ -353,7 +353,11 @@ footer{
     padding:70px 8% 30px;
     text-align:center;
 }
-
+footer{
+    opacity:0;
+    transform:translateY(50px);
+    transition:1s;
+}
 .footer-logo h2{
     font-size:34px;
     margin-bottom:25px;
@@ -584,5 +588,67 @@ html::-webkit-scrollbar-track{
  .box h3{
     font-size:22px;
 }
+header.sticky{
+    background:#fff;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
 
+.card,
+.product-card,
+.box,
+.review{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8 ease;
+}
+
+.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+nav ul li a.active{
+    color:#C9A227;
+}
+/* ===========================
+   Cart Icon
+=========================== */
+
+.cart-icon{
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#cartCount{
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    width: 18px;
+    height: 18px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Search & Cart Hover */
+
+#searchIcon,
+#heartIcon,
+#cartIcon{
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#searchIcon:hover,
+#heartIcon:hover,
+#cartIcon:hover{
+    color: #C9A227;
+    transform: translateY(-3px);
+}
 
