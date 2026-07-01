@@ -354,8 +354,8 @@ footer{
     text-align:center;
 }
 footer{
-    opacity:0;
-    transform:translateY(50px);
+    opacity:1;
+    transform:translateY(0px);
     transition:1s;
 }
 .footer-logo h2{
@@ -594,12 +594,11 @@ header.sticky{
 }
 
 .card,
-.product-card,
 .box,
 .review{
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.8 ease;
+    opacity:0;
+    transform:translateY(40px);
+    transition:.8s ease;
 }
 
 .show{

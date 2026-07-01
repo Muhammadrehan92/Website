@@ -162,3 +162,17 @@ cursor:pointer;
 background:#fff;
 color:#111;
 }
+.collection-card{
+    opacity:0;
+    transform:translateY(40px);
+    transition:.8s ease;
+}
+
+.collection-card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.collection-card img{
+    transition:.4s ease;
+}
