@@ -323,3 +323,19 @@ const youtube = document.getElementById("youtube")
 document.getElementById("youtube").addEventListener("click", () => {
     location.href = "https://youtube.com";
 });    
+// ===========================
+// Mobile Menu
+// ===========================
+
+const menuBtn = document.querySelector(".menu-toggle");
+const nav = document.querySelector("nav");
+
+if(menuBtn){
+
+menuBtn.addEventListener("click",()=>{
+
+nav.classList.toggle("active");
+
+});
+
+}

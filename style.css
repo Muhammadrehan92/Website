@@ -651,3 +651,105 @@ nav ul li a.active{
     transform: translateY(-3px);
 }
 
+
+/* ===========================
+   Hamburger Menu
+=========================== */
+
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+/* ============================
+    Responsive design
+=========================== */
+
+
+@media (max-width:768px){
+
+html,
+body{
+    overflow-x:hidden;
+}
+
+header{
+    height:auto;
+    flex-wrap:wrap;
+    padding:15px 20px;
+}
+
+.logo{
+    text-align:center;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+nav{
+    width:100%;
+    display:none;
+}
+
+nav.active{
+    display:block;
+}
+
+nav ul{
+    flex-direction:column;
+    gap:18px;
+    padding:20px 0;
+    text-align:center;
+    align-items:center;
+}
+
+.icons{
+    width:100%;
+    justify-content:center;
+    margin-top:10px;
+}
+
+.hero{
+    min-height:70vh;
+    padding:80px 20px;
+}
+
+.hero-content{
+    width:100%;
+    max-width:100%;
+    padding:0 20px;
+}
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.grid,
+.product-grid,
+.collection-container,
+.about-container,
+.contact-container{
+    grid-template-columns:1fr;
+}
+
+.card,
+.product-card,
+.collection-card{
+    width:100%;
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+footer{
+    text-align:center;
+}
+
+}
