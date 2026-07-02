@@ -722,13 +722,26 @@ nav ul{
 }
 
 .hero h1{
-    font-size:38px;
+    font-size:32px;
+    line-height:1.2;
 }
 
 .hero p{
-    font-size:16px;
+    font-size:15px;
+    line-height:1.6;
+}
+.hero-btns{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    align-items:center;
 }
 
+.hero-btns button{
+    width:220px;
+    padding:15px;
+    font-size:18px;
+}
 .grid,
 .product-grid,
 .collection-container,
